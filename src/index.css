@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  
+  --color-brand-charcoal: #0A0A0A;
+  --color-brand-orange: #F28C28;
+  --color-brand-gray-light: #121212;
+  --color-brand-gray-dark: #1A1A1A;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-charcoal text-white font-sans antialiased selection:bg-brand-orange selection:text-black;
+  }
+}
+
+@layer utilities {
+  .bento-cell {
+    @apply bg-brand-gray-light rounded-3xl border border-white/5 overflow-hidden transition-all duration-300;
+  }
+  .bento-cell-dark {
+    @apply bg-brand-gray-dark rounded-3xl border border-white/10 overflow-hidden transition-all duration-300;
+  }
+}
